@@ -7,29 +7,22 @@ import java.util.function.Supplier;
 
 public class Runner {
 
-
-    Function stringToInt;
-    BiFunction stringsToInt;
-    Consumer useString;
-    Supplier makeString;
-
     public static void main(String[] args) {
 
+        Function<String, Integer> stringToInt = s -> s.length();
+        int stringToIntResult = stringToInt.apply("asdf");
+        System.out.println(stringToIntResult);
 
-        Function<String, Integer> stringToInt = s ->
-                s.length();
+        BiFunction<String, String, Integer> stringsToInt = (r, s) -> r.length() + s.length();
+        int stringsToIntResult = stringsToInt.apply("aaef", "qwer");
+        System.out.println(stringsToIntResult);
 
+        Consumer<String> useString = s -> System.out.println(s);
+        useString.accept("yolo");
 
-        BiFunction<String, String, Integer> stringsToInt = (r, s) ->
-                r.length() + s.length();
-
-
-        Consumer<String> useString = (String s) ->
-                System.out.println(s);
-
-
-        Supplier<String> makeString = () ->
-                "hello";
+        Supplier<String> makeString = () -> "hello";
+        String makeStringResult = makeString.get();
+        System.out.println(makeStringResult);
 
     }
 
@@ -53,13 +46,3 @@ public class Runner {
         return "Hello!";
     }*/
 }
-
-
-
-
-/*
-public Integer stringToInt(String s) { return s.length(); }
-public Integer stringsToInt(String r, String s) { return r.length() + s.length(); }
-public void useString(String s) { System.out.println(s); }
-public String makeString { return “Hello!”;
- */
