@@ -26,23 +26,4 @@ public class Runner {
 
     }
 
-
-    /*public static Integer stringToInt(String s) {
-        return s.length();
-    }
-
-
-    public Integer stringsToInt(String r, String s) {
-        return r.length() + s.length();
-    }
-
-
-    public static void useString(String s) {
-        System.out.println(s);
-    }
-
-
-    public String makeString() {
-        return "Hello!";
-    }*/
 }
